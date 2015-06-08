@@ -57,14 +57,37 @@
 					<td class="item-total">100.00</td>
 					<td><a class="remove-item" href="">*(remover)</a></td>
 				</tr>
+			</tbody>
+		</table>
+		
+		<div>
+			<input class="undo" type="button" value="Undo" />
+		</div>
+		
+		<div>
+		Valor total: R$<span class="valor-total">0</span>
+		<br/>
+		Quantidade de itens: <span class="quantidade-de-itens">0</span>
+		</div>
+	
+	</div>
+	
+	
+	
+	<div class="carrinho">
+		<h2>Carrinho entrega em Vitória</h2>
+		<table>
+			<thead>
 				<tr>
-					<td><img src="imagens/mouse.jpg"></td>
-					<td>Mouse wireless</td>
-					<td>1</td>
-					<td>199.00</td>
-					<td class="item-total">199.00</td>
-					<td><a class="remove-item" href="">*(remover)</a></td>
+					<td></td>
+					<td>Nome</td>
+					<td>Quantidade</td>
+					<td>Valor</td>
+					<td>Total</td>
+					<td></td>
 				</tr>
+			</thead>
+			<tbody>
 				<tr>
 					<td><img src="imagens/camiseta.jpg"></td>
 					<td>Camiseta G</td>
@@ -77,16 +100,56 @@
 		</table>
 		
 		<div>
-			<input id="undo" type="button" value="Undo" />
+			<input class="undo" type="button" value="Undo" />
+		</div>
+		
+	<div>
+		Valor total: R$<span class="valor-total">0</span>
+		<br/>
+		Quantidade de itens: <span class="quantidade-de-itens">0</span>
+	</div>
+	
+	</div>
+	
+	
+	<div class="carrinho">
+		<h2>Carrinho entrega no Rio de Janeiro</h2>
+		<table>
+			<thead>
+				<tr>
+					<td></td>
+					<td>Nome</td>
+					<td>Quantidade</td>
+					<td>Valor</td>
+					<td>Total</td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><img src="imagens/mouse.jpg"></td>
+					<td>Mouse wireless</td>
+					<td>1</td>
+					<td>199.00</td>
+					<td class="item-total">199.00</td>
+					<td><a class="remove-item" href="">*(remover)</a></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<div>
+			<input class="undo" type="button" value="Undo" />
+		</div>
+		
+		<div>
+		Valor total: R$<span class="valor-total">0</span>
+		<br/>
+		Quantidade de itens: <span class="quantidade-de-itens">0</span>
 		</div>
 	
 	</div>
 	
-	<div>
-		Valor total: R$<span id="valor-total">0</span>
-		<br/>
-		Quantidade de itens: <span id="quantidade-de-itens">0</span>
-	</div>
+
 	
 	<!-- Boa pratica deixar scripts para final da pagina, pois o carregamento pode travar -->
 	<script src="jquery-2.1.4.min.js">  </script>

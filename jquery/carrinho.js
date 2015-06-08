@@ -1,16 +1,25 @@
+
+
 //Funcao para atualizar dadoas
 var atualizaDados = function() {
-	//pegaremos somente o elementos com class=item-total que estão visibles (usando extensão :visible, :hidden...)
-	var itens = $(".item-total:visible");
-	var total = 0;
-	for (var i = 0; i < itens.length; i++) {
-		var conteudo = $(itens[i]).text();
-		var valor = parseFloat(conteudo);
-		total += valor;
-	}
+	
+	var carrinhos = $(".carrinho");
+	carrinhos.each(function(){
+			var carrinho = $(this);
+			//pegaremos somente o elementos com class=item-total que estão visibles (usando extensão :visible, :hidden...)
+			var itens = carrinho.find(".item-total:visible");
+			var total = 0;
+			for (var i = 0; i < itens.length; i++) {
+				var conteudo = $(itens[i]).text();
+				var valor = parseFloat(conteudo);
+				total += valor;
+			}
+			carrinho.find(".valor-total").text(total);
+			carrinho.find(".quantidade-de-itens").text(itens.length);
+		
+		
+	});
 
-	$("#valor-total").text(total);
-	$("#quantidade-de-itens").text(itens.length);
 }
 
 // Funcao removeITem
@@ -42,12 +51,18 @@ var removeItem = function(event) {
 };
 
 var undo = function(){
+	
+	//Pegara o carrinho em qual estamos
+	var carrinho = $(this).closest(".carrinho");
+	
 	//Retira classe css recuperado de todo mundo que esta visible
-	$("tr:visible").removeClass("recuperado");
+	carrinho.find("tr:visible").removeClass("recuperado");
 	
 	//pegara todos os elementos TR que estiverem HIDEN dentro da pagina
-	var trs = $("tr:hidden");
+	var trs = carrinho.find("tr:hidden");
 	trs.addClass("recuperado").show();
+	
+	atualizaDados();
 	
 };
 
@@ -58,7 +73,7 @@ var aposInicializado = function() {
 	//Define comportamento para qdo houver o clique no botao remover
 	$(".remove-item").click(removeItem);
 	//Define comportamento para qdo houver o clique no botao undo
-	$("#undo").click(undo);
+	$(".undo").click(undo);
 
 };
 
