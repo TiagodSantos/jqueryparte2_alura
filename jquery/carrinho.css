@@ -10,6 +10,7 @@ body {
 	margin: 2em;
 }
 
+
 h2 {
 	color: #444;
 	font-size: 2em;
@@ -55,8 +56,16 @@ td {
 	text-decoration: none;
 	text-transform: uppercase;
 	
-	display: inline-block;
+	display: none;
 	padding: 0.5em;
+}
+
+.hovering{
+	background: #CCC;
+}
+
+#mostra-propagandas{
+	display: none;
 }
 
 input[type=button] {
